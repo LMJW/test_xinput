@@ -1,0 +1,44 @@
+fn main() {
+    windows::build!(
+        Windows::Win32::{
+            Foundation::*,
+            Graphics::Gdi::{
+                HBRUSH, 
+                PAINTSTRUCT, 
+                BeginPaint, 
+                FillRect, 
+                EndPaint, 
+                PatBlt,
+                StretchDIBits,
+                CreateDIBSection,
+                CreateCompatibleDC,
+                GetDC,
+                *
+            },
+            UI::WindowsAndMessaging::{
+                WNDCLASSA,
+                WNDPROC, 
+                DefWindowProcA, 
+                RegisterClassA, 
+                CreateWindowExA, 
+                GetMessageA,
+                TranslateMessage,
+                DispatchMessageA,
+                CW_USEDEFAULT,
+                PostQuitMessage,
+                ShowWindow,
+                GetClientRect,
+                *
+            },
+            UI::XInput::{
+                XInputGetState,
+                *
+            },
+            System::{
+                LibraryLoader::GetModuleHandleA,
+                Diagnostics::Debug::{OutputDebugStringA,GetLastError, *},
+                Memory::{VirtualAlloc, VirtualFree, *}
+            },
+        },
+    );
+}
